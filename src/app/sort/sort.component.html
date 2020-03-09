@@ -1,0 +1,53 @@
+<div class="my-border fit-content">
+    <table>
+        <tr>
+            <th>Array preparation: </th>
+            <th>Array to sort</th>
+        </tr>
+        <tr>
+            <td>
+                <authorize (tokenEvent)="receiveToken($event)"></authorize>
+                <div class="my-border">
+                    <div class="my-bold">{{title}}</div>
+                    <div>
+                        <label> 
+                            Avoid duplicates:
+                            <input type="checkbox" [checked]="avoidDuplicates" (change)="avoidDuplicates = $event.target.checked" [disabled]="tempDisabled"/>
+                        </label>
+                    </div>
+                    <div style="text-align: right;">
+                        <label> 
+                            Number of items:
+                            <input type="text" [value]="numberOfItems" (input)="numberOfItems = $event.target.value" [disabled]="tempDisabled"/>
+                        </label>
+                    </div>
+                    <div style="text-align: right;">
+                        <label> 
+                            Max value:
+                            <input type="text" [value]="maxValue" (input)="maxValue = $event.target.value" [disabled]="tempDisabled"/>
+                        </label>
+                    </div>
+                    <button (click)="generate($event)" class="my-button" [disabled]="tempDisabled">Generate</button>
+                </div>
+                <div class="my-border">
+                    <div>                        
+                        <label> 
+                            Sort type:
+                            <select name="sortEnum" (change)="sortField = $event.target.value" [disabled]="tempDisabled">
+                                <option *ngFor="let type of sortEnum" [value]="type" [attr.selected]="type == sortField ? true : null" [disabled]="tempDisabled">{{type}}</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div>
+                        <label> 
+                            Ascending:
+                            <input type="checkbox" [checked]="asc" (change)="asc = $event.target.checked" [disabled]="tempDisabled"/>
+                        </label>
+                    </div>
+                    <div><button (click)="sort($event)" class="my-button" [disabled]="tempDisabled">Sort</button></div>
+                </div>
+            </td>
+            <td><textarea class="my-textarea my-border" (change)="generatedItems = $event.target.value" [disabled]="tempDisabled">{{generatedItems}}</textarea></td>
+        </tr>
+    </table>
+</div>

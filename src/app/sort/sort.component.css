@@ -1,0 +1,78 @@
+th {
+    text-align: left;
+}
+
+td textarea {
+   margin-top: 0; 
+}
+
+div {
+    padding: 3px;
+}
+
+.fit-content {
+    width: fit-content;
+}
+
+.my-textarea {
+    width: 600px;
+    height: 390px;
+}
+
+.my-border {
+    border: 1px solid black;
+    margin-top: 5px;
+    vertical-align: top;
+}
+
+.my-bold {
+    font-weight: bold;
+}
+
+.my-border td {
+    vertical-align: top;
+}
+
+.my-button {
+    width: 100%;
+    height: 40px;
+}
+
+.my-bottom {
+    vertical-align: bottom;
+}
+
+.div-table {
+	display: table;
+	width: 100%;
+}
+
+.div-table-row {
+    display: table-row;
+}
+
+.div-table-cell, .div-table-head {
+    display: table-cell;
+    vertical-align: top;
+    padding: 3px 10px;
+}
+
+.div-table-head {
+	font-weight: bold;
+}
+
+.div-table-heading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+
+.div-table-foot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+
+.div-table-body {
+	display: table-row-group;
+}

@@ -1,0 +1,24 @@
+
+<div class="my-border">
+    <div *ngIf="this.token === undefined; then formBlock else tokenBlock"></div> 
+    <ng-template #formBlock>
+        <div class="my-bold">{{title}}</div>
+        <div style="text-align: right;">
+            <label> 
+                User name:
+                <input type="text" [value]="userName" (input)="userName = $event.target.value" [disabled]="tempDisabled"/>
+            </label>
+        </div>
+        <div style="text-align: right;">
+            <label> 
+                Password:
+                <input type="password" [value]="password" (input)="password = $event.target.value"/>
+            </label>
+        </div>
+        <button (click)="authorize($event)" class="my-button">Authorize</button>
+    </ng-template>
+    <ng-template #tokenBlock>
+        <div>Hello, <b>{{userName}}</b>!</div>
+        <button (click)="logout($event)" class="my-button">Log out</button>
+    </ng-template>
+</div>
